@@ -12,6 +12,9 @@ public class ChoosePosePanel : MonoBehaviour
     public GameObject poseTwo;
     public GameObject poseThree;
 
+    public GameObject pose2image;
+    public GameObject pose3image;
+
     private string lastClickedButton = "";
 
     void Start()
@@ -25,6 +28,8 @@ public class ChoosePosePanel : MonoBehaviour
         poseOne.SetActive(false);
         poseTwo.SetActive(false);
         poseThree.SetActive(false);
+        pose2image.SetActive(false);
+        pose3image.SetActive(false);
     }
 
     void ActivatePoseOne()
@@ -39,6 +44,8 @@ public class ChoosePosePanel : MonoBehaviour
         {
             // poseOne 활성화
             poseOne.SetActive(true);
+            pose2image.SetActive(false);
+            pose3image.SetActive(false);
             poseTwo.SetActive(false);
             poseThree.SetActive(false);
             lastClickedButton = "A";
@@ -51,6 +58,8 @@ public class ChoosePosePanel : MonoBehaviour
         {
             // 모든 게임 오브젝트를 비활성화
             poseTwo.SetActive(false);
+            pose2image.SetActive(false);
+            pose3image.SetActive(false);
             lastClickedButton = "";
         }
         else
@@ -58,6 +67,8 @@ public class ChoosePosePanel : MonoBehaviour
             // poseTwo 활성화
             poseOne.SetActive(false);
             poseTwo.SetActive(true);
+            pose2image.SetActive(true);
+            pose3image.SetActive(false);
             poseThree.SetActive(false);
             lastClickedButton = "B";
         }
@@ -69,6 +80,8 @@ public class ChoosePosePanel : MonoBehaviour
         {
             // 모든 게임 오브젝트를 비활성화
             poseThree.SetActive(false);
+            pose2image.SetActive(false);
+            pose3image.SetActive(false);
             lastClickedButton = "";
         }
         else
@@ -77,6 +90,8 @@ public class ChoosePosePanel : MonoBehaviour
             poseOne.SetActive(false);
             poseTwo.SetActive(false);
             poseThree.SetActive(true);
+            pose2image.SetActive(false);
+            pose3image.SetActive(true);
             lastClickedButton = "C";
         }
     }
